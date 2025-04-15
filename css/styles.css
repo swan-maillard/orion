@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+        
+/* Fix for the missing base animation definitions */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes pulse-slow {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes orbit {
+    0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+/* Improve performance by using transform instead of opacity for stars animation */
+@keyframes starsAnimation {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
+}
+
+/* Add support for prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .animate-twinkle,
+    .animate-pulse-slow,
+    .animate-orbit,
+    .animate-float,
+    .animate-rotate-slow,
+    .animate-shooting-star,
+    .animate-wave,
+    .ripple-effect,
+    .constellation-orion,
+    .stars-small, .stars-medium, .stars-large {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .parallax-stars {
+        transform: none !important;
+    }
+}
+
+/* Fix for mobile responsive issues */
+@media (max-width: 640px) {
+    .banner-clip {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+    
+    .cosmic-circle-blur {
+        opacity: 0.1;
+    }
+}
+
+/* Optimize animations for better performance */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.parallax-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    transform: translateY(0);
+    will-change: transform;
+}
+
+.stars-small, .stars-medium, .stars-large {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+    will-change: transform;
+}
+
+/* Fix ripple effect that was not properly sized */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 1.5s linear;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Fix cosmic glow animation */
+.cosmic-glow {
+    box-shadow: 0 0 15px 2px rgba(97, 102, 255, 0.3), 0 0 30px 5px rgba(97, 102, 255, 0.2);
+    transition: box-shadow 0.5s ease;
+}
+
+.cosmic-glow:hover {
+    box-shadow: 0 0 20px 3px rgba(97, 102, 255, 0.4), 0 0 40px 7px rgba(97, 102, 255, 0.3);
+}
+
+/* Ensure consistent hover effects */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* More efficient star rendering */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    opacity: 0.7;
+    will-change: opacity, transform;
+}
+
+/* Fix for the mobile menu transition */
+#mobile-menu {
+    transition: max-height 0.5s ease, opacity 0.4s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+#mobile-menu.active {
+    max-height: 500px;
+    opacity: 1 !important;
+}
+
+
+/* Enhanced tilt effect */
+.tilt-on-hover {
+transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+transform-style: preserve-3d;
+will-change: transform;
+}
+
+/* Enhanced cosmic glow */
+.cosmic-glow {
+box-shadow: 0 0 25px 5px rgba(97, 102, 255, 0.25), 0 0 50px 10px rgba(97, 102, 255, 0.15);
+transition: box-shadow 0.8s ease;
+}
+
+.cosmic-glow:hover {
+box-shadow: 0 0 30px 8px rgba(97, 102, 255, 0.4), 0 0 60px 12px rgba(97, 102, 255, 0.3);
+}
