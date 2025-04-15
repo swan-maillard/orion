@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez les massages thérapeutiques d'Orion Massage. Oriane, thérapeute professionnelle, vous propose des massages relaxants dans une ambiance céleste et apaisante.">
+    <meta name="keywords" content="massage thérapeutique, massage relaxant, bien-être, relaxation, Orion, massage français, massage paris">
+    <meta name="author" content="Orion Massage - Oriane">
+    <meta property="og:title" content="Orion Massage - Massages Thérapeutiques par Oriane">
+    <meta property="og:description" content="Découvrez les massages thérapeutiques d'Orion. Oriane vous accueille dans un espace céleste et apaisant.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <title>Orion Massage | Massages Thérapeutiques par Oriane</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cosmic: {
+                            50: '#f0f4ff',
+                            100: '#e0e9ff',
+                            200: '#c7d6ff',
+                            300: '#a5baff',
+                            400: '#8192ff',
+                            500: '#6166ff',
+                            600: '#3f3cf0',
+                            700: '#342fd4',
+                            800: '#2b2bab',
+                            900: '#2a2d8a',
+                            950: '#121347',
+                        },
+                        nebula: {
+                            50: '#f5f2ff',
+                            100: '#ede5ff',
+                            200: '#d9ccff',
+                            300: '#bfa3ff',
+                            400: '#a672ff',
+                            500: '#9149ff',
+                            600: '#8033f5',
+                            700: '#6b20d6',
+                            800: '#5a1db0',
+                            900: '#491c8c',
+                            950: '#2c0d63',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'twinkle': 'twinkle 4s ease-in-out infinite',
+                        'orbit': 'orbit 20s linear infinite',
+                        'rotate-slow': 'rotate 15s linear infinite',
+                        'shooting-star': 'shootingStar 5s ease-in infinite',
+                        'wave': 'wave 3s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        twinkle: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '1', transform: 'scale(1.3)' }
+                        },
+                        orbit: {
+                            '0%': { transform: 'rotate(0deg) translateX(100px) rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg) translateX(100px) rotate(-360deg)' }
+                        },
+                        rotate: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
+                        },
+                        shootingStar: {
+                            '0%': { transform: 'translateX(0) translateY(0)', opacity: '0' },
+                            '10%': { transform: 'translateX(-20px) translateY(20px)', opacity: '1' },
+                            '100%': { transform: 'translateX(-400px) translateY(400px)', opacity: '0' }
+                        },
+                        wave: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '25%': { transform: 'translateY(-5px)' },
+                            '75%': { transform: 'translateY(5px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+        
+        /* Fix for the missing base animation definitions */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+        
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+        }
+        
+        /* Improve performance by using transform instead of opacity for stars animation */
+        @keyframes starsAnimation {
+            from { transform: translateY(0); }
+            to { transform: translateY(-1000px); }
+        }
+        
+        /* Add support for prefers-reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            .animate-twinkle,
+            .animate-pulse-slow,
+            .animate-orbit,
+            .animate-float,
+            .animate-rotate-slow,
+            .animate-shooting-star,
+            .animate-wave,
+            .ripple-effect,
+            .constellation-orion,
+            .stars-small, .stars-medium, .stars-large {
+                animation: none !important;
+                transition: none !important;
+            }
+            
+            .parallax-stars {
+                transform: none !important;
+            }
+        }
+        
+        /* Fix for mobile responsive issues */
+        @media (max-width: 640px) {
+            .banner-clip {
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            }
+            
+            .cosmic-circle-blur {
+                opacity: 0.1;
+            }
+        }
+        
+        /* Optimize animations for better performance */
+        .stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .parallax-stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            transform: translateY(0);
+            will-change: transform;
+        }
+        
+        .stars-small, .stars-medium, .stars-large {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: repeat;
+            will-change: transform;
+        }
+        
+        /* Fix ripple effect that was not properly sized */
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 1.5s linear;
+            background-color: rgba(255, 255, 255, 0.3);
+            width: 100px;
+            height: 100px;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Fix cosmic glow animation */
+        .cosmic-glow {
+            box-shadow: 0 0 15px 2px rgba(97, 102, 255, 0.3), 0 0 30px 5px rgba(97, 102, 255, 0.2);
+            transition: box-shadow 0.5s ease;
+        }
+        
+        .cosmic-glow:hover {
+            box-shadow: 0 0 20px 3px rgba(97, 102, 255, 0.4), 0 0 40px 7px rgba(97, 102, 255, 0.3);
+        }
+        
+        /* Ensure consistent hover effects */
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+        }
+        
+        .hover-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* More efficient star rendering */
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            width: 2px;
+            height: 2px;
+            opacity: 0.7;
+            will-change: opacity, transform;
+        }
+        
+        /* Fix for the mobile menu transition */
+        #mobile-menu {
+            transition: max-height 0.5s ease, opacity 0.4s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        
+        #mobile-menu.active {
+            max-height: 500px;
+            opacity: 1 !important;
+        }
+
+
+/* Enhanced tilt effect */
+.tilt-on-hover {
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Enhanced cosmic glow */
+.cosmic-glow {
+    box-shadow: 0 0 25px 5px rgba(97, 102, 255, 0.25), 0 0 50px 10px rgba(97, 102, 255, 0.15);
+    transition: box-shadow 0.8s ease;
+}
+
+.cosmic-glow:hover {
+    box-shadow: 0 0 30px 8px rgba(97, 102, 255, 0.4), 0 0 60px 12px rgba(97, 102, 255, 0.3);
+}
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-gray-800 overflow-x-hidden">
+    <!-- Fixed Stars Background with Parallax Effect -->
+    <div class="stars-container overflow-hidden" id="stars-container">
+        <div class="parallax-stars" id="parallax-stars">
+            <div class="stars-small"></div>
+            <div class="stars-medium"></div>
+            <div class="stars-large"></div>
+            
+            <!-- Shooting stars -->
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            <div class="shooting-star"></div>
+            
+            <!-- Constellation -->
+            <div class="absolute top-1/4 left-1/4 w-80 h-80 opacity-5">
+                <div class="constellation-orion w-full h-full transform scale-150"></div>
+            </div>
+            <div class="absolute bottom-1/4 right-1/3 w-60 h-60 opacity-5">
+                <div class="constellation-orion w-full h-full transform scale-100 rotate-45"></div>
+            </div>
+            
+            <!-- Cosmic circles -->
+            <div class="cosmic-circle-blur w-96 h-96 bg-cosmic-500 top-10 -left-20"></div>
+            <div class="cosmic-circle-blur w-80 h-80 bg-nebula-500 bottom-40 -right-10 animate-rotate-slow"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 transition-all duration-300 py-3">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <!-- Logo with enhanced animation -->
+                <a href="#" class="flex items-center space-x-2 group relative">
+                    <div class="relative">
+                        <i class="fas fa-star text-cosmic-600 text-2xl transform transition-all duration-700 group-hover:rotate-[360deg] group-hover:scale-110"></i>
+                        <span class="absolute -top-1 -right-1 w-6 h-6 bg-cosmic-500/20 rounded-full animate-pulse-slow"></span>
+                        
+                        <!-- Subtle stars around logo on hover -->
+                        <span class="absolute -top-2 -left-2 w-1 h-1 bg-cosmic-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity delay-100 duration-300"></span>
+                        <span class="absolute top-0 -right-2 w-1.5 h-1.5 bg-cosmic-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity delay-200 duration-300"></span>
+                        <span class="absolute -bottom-1 left-0 w-1 h-1 bg-nebula-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity delay-300 duration-300"></span>
+                    </div>
+                    <div class="relative">
+                        <span class="font-serif font-bold text-xl bg-gradient-to-r from-cosmic-600 to-nebula-500 bg-clip-text text-transparent">Orion Massage</span>
+                        <!-- Animated underline on hover -->
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cosmic-500 to-nebula-400 group-hover:w-full transition-all duration-300"></span>
+                    </div>
+                </a>
+                
+                <!-- Desktop menu with enhanced hover effects and indicators -->
+                <div class="hidden md:flex space-x-1">
+                    <a href="#home" class="relative px-4 py-2 text-gray-700 hover:text-cosmic-600 transition-colors font-medium group overflow-hidden rounded-lg">
+                        <span class="relative z-10">Accueil</span>
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="absolute inset-0 bg-cosmic-50 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom rounded-lg opacity-70"></span>
+                        <!-- Subtle star that appears on hover -->
+                        <span class="absolute top-1 right-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-hover:opacity-80 transition-opacity duration-500"></span>
+                    </a>
+                    <a href="#about" class="relative px-4 py-2 text-gray-700 hover:text-cosmic-600 transition-colors font-medium group overflow-hidden rounded-lg">
+                        <span class="relative z-10">À Propos</span>
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="absolute inset-0 bg-cosmic-50 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom rounded-lg opacity-70"></span>
+                        <span class="absolute top-1 right-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-hover:opacity-80 transition-opacity duration-500"></span>
+                    </a>
+                    <a href="#services" class="relative px-4 py-2 text-gray-700 hover:text-cosmic-600 transition-colors font-medium group overflow-hidden rounded-lg">
+                        <span class="relative z-10">Services</span>
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="absolute inset-0 bg-cosmic-50 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom rounded-lg opacity-70"></span>
+                        <span class="absolute top-1 right-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-hover:opacity-80 transition-opacity duration-500"></span>
+                    </a>
+                    <a href="#testimonials" class="relative px-4 py-2 text-gray-700 hover:text-cosmic-600 transition-colors font-medium group overflow-hidden rounded-lg">
+                        <span class="relative z-10">Témoignages</span>
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-cosmic-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        <span class="absolute inset-0 bg-cosmic-50 scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-bottom rounded-lg opacity-70"></span>
+                        <span class="absolute top-1 right-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-hover:opacity-80 transition-opacity duration-500"></span>
+                    </a>
+                    <a href="#contact" class="ml-2 px-5 py-2 bg-gradient-to-r from-cosmic-500 to-nebula-500 text-white font-medium rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 group relative overflow-hidden">
+                        <!-- Cosmic particle effect on hover -->
+                        <span class="absolute inset-0 opacity-0 group-hover:opacity-20">
+                            <span class="absolute top-1 left-3 w-1 h-1 bg-white rounded-full animate-twinkle"></span>
+                            <span class="absolute bottom-2 right-5 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 0.5s"></span>
+                            <span class="absolute top-2 right-3 w-0.5 h-0.5 bg-white rounded-full animate-twinkle" style="animation-delay: 1s"></span>
+                        </span>
+                        <span class="flex items-center relative z-10">
+                            <span>Contact</span>
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button with animation -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="relative w-10 h-10 flex justify-center items-center rounded-full bg-cosmic-50 focus:outline-none group overflow-hidden">
+                        <span class="sr-only">Menu</span>
+                        <div class="w-5 flex flex-col items-center justify-center">
+                            <span class="block h-0.5 w-5 bg-cosmic-600 transform transition duration-300 ease-in-out" id="line1"></span>
+                            <span class="block h-0.5 w-5 bg-cosmic-600 my-1 transform transition duration-300 ease-in-out" id="line2"></span>
+                            <span class="block h-0.5 w-5 bg-cosmic-600 transform transition duration-300 ease-in-out" id="line3"></span>
+                        </div>
+                        <span class="absolute inset-0 scale-0 group-hover:scale-100 transition-transform duration-300 bg-cosmic-100 rounded-full"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu with enhanced slide-down animation -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-2 overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+                <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-lg p-6 space-y-3 border border-cosmic-100 relative overflow-hidden">
+                    <!-- Subtle constellation background -->
+                    <div class="absolute inset-0 opacity-5 pointer-events-none">
+                        <div class="constellation-orion absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-150"></div>
+                    </div>
+                    
+                    <a href="#home" class="block py-2 px-4 text-gray-700 hover:text-cosmic-600 hover:bg-cosmic-50 rounded-lg transition-all duration-300 transform hover:translate-x-2 relative group">
+                        <span class="flex items-center">
+                            <i class="fas fa-home mr-3 text-cosmic-500"></i>
+                            <span>Accueil</span>
+                        </span>
+                        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-star text-cosmic-300 text-xs"></i>
+                        </span>
+                    </a>
+                    <a href="#about" class="block py-2 px-4 text-gray-700 hover:text-cosmic-600 hover:bg-cosmic-50 rounded-lg transition-all duration-300 transform hover:translate-x-2 relative group">
+                        <span class="flex items-center">
+                            <i class="fas fa-user mr-3 text-cosmic-500"></i>
+                            <span>À Propos</span>
+                        </span>
+                        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-star text-cosmic-300 text-xs"></i>
+                        </span>
+                    </a>
+                    <a href="#services" class="block py-2 px-4 text-gray-700 hover:text-cosmic-600 hover:bg-cosmic-50 rounded-lg transition-all duration-300 transform hover:translate-x-2 relative group">
+                        <span class="flex items-center">
+                            <i class="fas fa-spa mr-3 text-cosmic-500"></i>
+                            <span>Services</span>
+                        </span>
+                        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-star text-cosmic-300 text-xs"></i>
+                        </span>
+                    </a>
+                    <a href="#testimonials" class="block py-2 px-4 text-gray-700 hover:text-cosmic-600 hover:bg-cosmic-50 rounded-lg transition-all duration-300 transform hover:translate-x-2 relative group">
+                        <span class="flex items-center">
+                            <i class="fas fa-star mr-3 text-cosmic-500"></i>
+                            <span>Témoignages</span>
+                        </span>
+                        <span class="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i class="fas fa-star text-cosmic-300 text-xs"></i>
+                        </span>
+                    </a>
+                    <a href="#contact" class="block py-2 px-4 mt-2 bg-gradient-to-r from-cosmic-500 to-nebula-500 text-white font-medium rounded-lg shadow-md relative overflow-hidden group">
+                        <!-- Cosmic particles effect on hover -->
+                        <span class="absolute inset-0 opacity-0 group-hover:opacity-20">
+                            <span class="absolute top-1 left-3 w-1 h-1 bg-white rounded-full animate-twinkle"></span>
+                            <span class="absolute bottom-2 right-5 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 0.5s"></span>
+                            <span class="absolute top-2 right-3 w-0.5 h-0.5 bg-white rounded-full animate-twinkle" style="animation-delay: 1s"></span>
+                        </span>
+                        <span class="flex items-center relative z-10">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>Contact</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Enhanced Hero Section with Improved Parallax & Star Animations -->
+<header id="home" class="relative min-h-screen overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 bg-[#0A0F2C]">
+    <!-- Interactive stars background with enhanced parallax effect -->
+    <div class="absolute inset-0 z-0">
+        <!-- Enhanced Nebula effects with better performance -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/15 rounded-full blur-[100px] animate-float" style="animation-duration: 15s;"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/15 rounded-full blur-[80px] animate-float" style="animation-delay: 5s; animation-duration: 18s;"></div>
+            <div class="absolute top-1/3 right-1/3 w-72 h-72 bg-cosmic-500/15 rounded-full blur-[120px] animate-float" style="animation-delay: 2s; animation-duration: 20s;"></div>
+        </div>
+
+        <!-- Dynamic star field with layered parallax -->
+        <div class="absolute inset-0" id="starfield">
+            <!-- Generated via JS for better performance -->
+        </div>
+
+        <!-- Enhanced Orion constellation with dynamic drawing animation -->
+        <div class="constellation-map absolute inset-0 flex items-center justify-center pointer-events-none">
+            <svg class="w-3/4 h-3/4 max-w-4xl opacity-15" viewBox="0 0 100 100">
+                <!-- Stars with pulsing effect -->
+                <circle cx="20" cy="20" r="1.8" fill="white" class="animate-pulse-slow">
+                    <animate attributeName="opacity" from="0.3" to="0.8" dur="4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="40" cy="25" r="1.2" fill="white" class="animate-pulse-slow" style="animation-delay: 1s">
+                    <animate attributeName="opacity" from="0.3" to="0.8" dur="5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="35" cy="40" r="1.5" fill="white" class="animate-pulse-slow" style="animation-delay: 0.5s">
+                    <animate attributeName="opacity" from="0.3" to="0.8" dur="4.5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="50" cy="50" r="2.2" fill="white" class="animate-pulse-slow" style="animation-delay: 0.7s">
+                    <animate attributeName="opacity" from="0.3" to="0.8" dur="4s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="65" cy="40" r="1.5" fill="white" class="animate-pulse-slow" style="animation-delay: 1.2s">
+                    <animate attributeName="opacity" from="0.3" to="0.8" dur="3.5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="60" cy="25" r="1.2" fill="white" class="animate-pulse-slow" style="animation-delay: 0.3s">
+                    <animate attributeName="opacity" from="0.3" to="0.8" dur="5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="80" cy="20" r="1.8" fill="white" class="animate-pulse-slow" style="animation-delay: 1.5s">
+                    <animate attributeName="opacity" from="0.3" to="0.8" dur="3s" repeatCount="indefinite" />
+                </circle>
+                
+                <!-- Lines with enhanced drawing animation -->
+                <line x1="20" y1="20" x2="40" y2="25" stroke="rgba(255,255,255,0.4)" stroke-width="0.3" stroke-dasharray="50" stroke-dashoffset="50">
+                    <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.5s" fill="freeze" />
+                </line>
+                <line x1="40" y1="25" x2="35" y2="40" stroke="rgba(255,255,255,0.4)" stroke-width="0.3" stroke-dasharray="50" stroke-dashoffset="50">
+                    <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.5s" begin="0.5s" fill="freeze" />
+                </line>
+                <line x1="35" y1="40" x2="50" y2="50" stroke="rgba(255,255,255,0.4)" stroke-width="0.3" stroke-dasharray="50" stroke-dashoffset="50">
+                    <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.5s" begin="1s" fill="freeze" />
+                </line>
+                <line x1="50" y1="50" x2="65" y2="40" stroke="rgba(255,255,255,0.4)" stroke-width="0.3" stroke-dasharray="50" stroke-dashoffset="50">
+                    <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.5s" begin="1.5s" fill="freeze" />
+                </line>
+                <line x1="65" y1="40" x2="60" y2="25" stroke="rgba(255,255,255,0.4)" stroke-width="0.3" stroke-dasharray="50" stroke-dashoffset="50">
+                    <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.5s" begin="2s" fill="freeze" />
+                </line>
+                <line x1="60" y1="25" x2="80" y2="20" stroke="rgba(255,255,255,0.4)" stroke-width="0.3" stroke-dasharray="50" stroke-dashoffset="50">
+                    <animate attributeName="stroke-dashoffset" from="50" to="0" dur="2.5s" begin="2.5s" fill="freeze" />
+                </line>
+            </svg>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <!-- Enhanced Text Content with Improved Animation Sequence -->
+            <div class="lg:w-1/2 text-white" data-aos="fade-right" data-aos-duration="1000">
+                <div class="relative">
+                    <span class="absolute -top-12 -left-12 text-8xl text-white/5 font-serif animate-float" style="animation-duration: 10s;">✧</span>
+                    <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+                        <span class="block bg-clip-text text-transparent bg-gradient-to-r from-cosmic-400 to-nebula-300 relative py-2 animate-fadeIn" style="animation-duration: 1s;">
+                            Massages relaxants
+                            <!-- Animated stars with improved visibility -->
+                            <span class="absolute -top-5 right-1/4 w-1.5 h-1.5 bg-white rounded-full animate-twinkle"></span>
+                            <span class="absolute top-1/2 right-1/3 w-2 h-2 bg-white rounded-full animate-twinkle" style="animation-delay: 1.5s"></span>
+                        </span>
+                        <span class="block mt-3 relative animate-slideUp" style="animation-delay: 0.3s; animation-duration: 1s;">
+                            pour Corps & Esprit
+                            <!-- Enhanced orbital element -->
+                            <span class="absolute -right-8 top-1/2 w-16 h-16 transform -translate-y-1/2 animate-rotate-slow" style="animation-duration: 25s;">
+                                <span class="absolute inset-0 border border-white/15 rounded-full"></span>
+                                <span class="absolute w-2.5 h-2.5 bg-cosmic-300 rounded-full transform -translate-y-8"></span>
+                            </span>
+                        </span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl text-nebula-100 mb-10 animate-slideUp leading-relaxed" style="animation-delay: 0.6s; animation-duration: 1s;">
+                        Embarquez pour un voyage sensoriel unique où chaque massage est une 
+                        <span class="relative inline-block group">
+                            constellation
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-nebula-300/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
+                        </span> 
+                        de bien-être.
+                    </p>
+                    
+                    <!-- Enhanced CTA Buttons with improved hover effects -->
+                    <div class="flex flex-col sm:flex-row gap-6 animate-slideUp" style="animation-delay: 0.9s; animation-duration: 1s;">
+                        <a href="#services" class="px-8 py-4 bg-white text-cosmic-800 rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center group relative overflow-hidden">
+                            <span class="absolute inset-0 bg-gradient-to-r from-cosmic-50 to-nebula-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            <span class="relative z-10 flex items-center font-medium">
+                                <i class="fas fa-spa mr-2 text-cosmic-500 group-hover:rotate-45 transition-transform duration-500"></i>
+                                Découvrir nos soins
+                            </span>
+                            <!-- Enhanced particle effect on hover -->
+                            <span class="absolute top-1 right-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-hover:opacity-80 transition-opacity duration-500"></span>
+                        </a>
+                        <a href="#contact" class="group relative overflow-hidden bg-gradient-to-r from-cosmic-500 to-nebula-500 px-8 py-4 rounded-full font-medium transition-all duration-500 text-center hover:shadow-lg hover:shadow-cosmic-500/25">
+                            <span class="flex items-center justify-center relative z-10 text-white">
+                                <i class="fas fa-star mr-2 group-hover:animate-spin-slow"></i>
+                                Réserver
+                            </span>
+                            <!-- Enhanced cosmic particles effect on hover -->
+                            <div class="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none">
+                                <span class="absolute top-1 left-3 w-2 h-2 bg-white rounded-full animate-twinkle"></span>
+                                <span class="absolute bottom-2 right-5 w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 0.5s"></span>
+                                <span class<a href="#contact" class="group relative overflow-hidden bg-gradient-to-r from-cosmic-500 to-nebula-500 px-8 py-4 rounded-full font-medium transition-all duration-500 text-center hover:shadow-lg hover:shadow-cosmic-500/25">
+                                    <span class="flex items-center justify-center relative z-10 text-white">
+                                        <i class="fas fa-star mr-2 group-hover:animate-spin-slow"></i>
+                                        Réserver
+                                    </span>
+                                    <!-- Enhanced cosmic particles effect on hover -->
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none">
+                                        <span class="absolute top-1 left-3 w-2 h-2 bg-white rounded-full animate-twinkle"></span>
+                                        <span class="absolute bottom-2 right-5 w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 0.5s"></span>
+                                        <span class="absolute top-2 right-3 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 1s"></span>
+                                    </div>
+                                    <!-- Ripple effect on click -->
+                                    <span class="ripple-effect bg-white/30" id="reserve-ripple"></span>
+                                </a>="absolute top-2 right-3 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 1s"></span>
+                            </div>
+                            <!-- Ripple effect on click -->
+                            <span class="ripple-effect bg-white/30" id="reserve-ripple"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Cosmic Image Showcase with Galaxy Animations and Image Carousel -->
+            <div class="lg:w-1/2 mt-8 lg:mt-0" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative h-[600px] mx-auto perspective-1000 opacity-1000 hover:opacity-70 transition-opacity duration-700">
+                    <!-- Image carousel container -->
+                    <div id="image-carousel" class="absolute inset-0 rounded-2xl overflow-hidden shadow-lg group">
+                        <!-- Image slides -->
+                        <div class="carousel-slides absolute inset-0 transition-opacity duration-1000">
+                            <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                                alt="Massage relaxant" 
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slides absolute inset-0 opacity-0 transition-opacity duration-1000">
+                            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                                alt="Massage thérapeutique" 
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="carousel-slides absolute inset-0 opacity-0 transition-opacity duration-1000">
+                            <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                                alt="Massage aux pierres" 
+                                class="w-full h-full object-cover object-center">
+                        </div>
+                        
+                        <!-- Elegant overlay gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0F2C]/80 via-[#0A0F2C]/40 to-transparent opacity-70"></div>
+                        
+                        <!-- Galaxy animation overlays -->
+                        <div class="absolute inset-0 overflow-hidden mix-blend-screen">
+                            <!-- Animated galaxy spiral -->
+                            <div class="absolute w-[800px] h-[800px] -top-1/4 -right-1/4 opacity-20 animate-rotate-slow" style="animation-duration: 120s;">
+                                <svg viewBox="0 0 400 400">
+                                    <path d="M200,200 L200,50 A150,150 0 0,1 350,200 A150,150 0 0,1 200,350 A150,150 0 0,1 50,200 A150,150 0 0,1 200,50" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="5,15" />
+                                    <path d="M200,200 L200,75 A125,125 0 0,1 325,200 A125,125 0 0,1 200,325 A125,125 0 0,1 75,200 A125,125 0 0,1 200,75" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="5,12" />
+                                    <path d="M200,200 L200,100 A100,100 0 0,1 300,200 A100,100 0 0,1 200,300 A100,100 0 0,1 100,200 A100,100 0 0,1 200,100" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="3,9" />
+                                </svg>
+                                <!-- Animated stars in spiral -->
+                                <div class="absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full animate-twinkle" style="animation-delay: 0.5s;"></div>
+                                <div class="absolute top-1/3 left-2/3 w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 1.2s;"></div>
+                                <div class="absolute top-2/3 left-1/3 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 2s;"></div>
+                            </div>
+                            
+                            <!-- Nebula effect -->
+                            <div class="absolute inset-0 opacity-30">
+                                <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/20 rounded-full blur-[60px] animate-pulse-slow"></div>
+                                <div class="absolute bottom-1/3 right-1/3 w-80 h-80 bg-blue-500/20 rounded-full blur-[80px] animate-float" style="animation-duration: 18s;"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Enhanced stars pattern overlay with animation -->
+                        <div class="absolute inset-0 opacity-20 mix-blend-screen">
+                            <!-- Dynamic star field -->
+                            <div class="absolute w-full h-full stars-field">
+                                <span class="absolute top-[10%] left-[15%] w-1 h-1 bg-white rounded-full animate-twinkle"></span>
+                                <span class="absolute top-[25%] left-[45%] w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 0.7s"></span>
+                                <span class="absolute top-[40%] left-[75%] w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 1.5s"></span>
+                                <span class="absolute top-[65%] left-[28%] w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 2.2s"></span>
+                                <span class="absolute top-[80%] left-[65%] w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 1.1s"></span>
+                                <span class="absolute top-[15%] left-[82%] w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 0.3s"></span>
+                                <span class="absolute top-[50%] left-[10%] w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 1.8s"></span>
+                            </div>
+                         </div>
+                    </div>
+                    
+                    <!-- Elegant caption -->
+                    <div class="absolute bottom-8 left-0 right-0 px-8 z-10">
+                        <div class="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 transform transition-transform duration-500">
+                            <h3 class="font-serif text-2xl text-white mb-2">Une expérience sensorielle unique</h3>                            
+                            <!-- Rating indicators with animated stars -->
+                            <div class="flex items-center mt-4">
+                                <div class="flex space-x-1 text-amber-300">
+                                    <i class="fas fa-star animate-pulse-slow" style="animation-duration: 3s;"></i>
+                                    <i class="fas fa-star animate-pulse-slow" style="animation-duration: 3.5s; animation-delay: 0.2s;"></i>
+                                    <i class="fas fa-star animate-pulse-slow" style="animation-duration: 3.2s; animation-delay: 0.4s;"></i>
+                                    <i class="fas fa-star animate-pulse-slow" style="animation-duration: 3.8s; animation-delay: 0.6s;"></i>
+                                    <i class="fas fa-star animate-pulse-slow" style="animation-duration: 3.3s; animation-delay: 0.8s;"></i>
+                                </div>
+                                <span class="ml-2 text-white/70 text-sm">98% de satisfaction client</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enhanced galaxy effects -->
+                    <div class="absolute top-1/3 left-1/2 w-80 h-80 bg-cosmic-500/20 rounded-full filter blur-[100px] mix-blend-screen animate-float" style="animation-duration: 15s;"></div>
+                    <div class="absolute bottom-1/4 right-1/3 w-64 h-64 bg-nebula-500/20 rounded-full filter blur-[80px] mix-blend-overlay animate-float" style="animation-duration: 12s; animation-delay: 2s;"></div>
+                    
+                    <!-- Cosmic dust particles -->
+                    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                        <div class="absolute w-full h-full opacity-30">
+                            <span class="absolute top-1/5 left-1/5 w-[2px] h-[2px] bg-white rounded-full animate-float" style="animation-duration: 6s;"></span>
+                            <span class="absolute top-3/5 left-4/5 w-[1px] h-[1px] bg-white rounded-full animate-float" style="animation-duration: 8s; animation-delay: 1s;"></span>
+                            <span class="absolute top-4/5 left-2/5 w-[1.5px] h-[1.5px] bg-white rounded-full animate-float" style="animation-duration: 7s; animation-delay: 2s;"></span>
+                            <span class="absolute top-2/5 left-3/5 w-[1px] h-[1px] bg-white rounded-full animate-float" style="animation-duration: 9s; animation-delay: 3s;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Script for the image carousel -->
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Image carousel functionality
+                const slides = document.querySelectorAll('.carousel-slides');
+                let currentSlide = 0;
+                
+                function showSlide(index) {
+                    // Hide all slides
+                    slides.forEach(slide => {
+                        slide.style.opacity = '0';
+                    });
+                    
+                    // Show the current slide
+                    slides[index].style.opacity = '1';
+                }
+                
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                }
+                
+                // Start the carousel
+                showSlide(currentSlide);
+                setInterval(nextSlide, 10000);
+            });
+            </script>
+        </div>
+    </div>
+
+    <!-- Enhanced wave divider with animated stars -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none rotate-180">
+        <div class="relative">
+            <!-- Enhanced subtle stars in the wave -->
+            <span class="absolute top-0 left-1/4 w-2 h-2 bg-white rounded-full animate-twinkle z-10"></span>
+            <span class="absolute top-2 left-1/2 w-1.5 h-1.5 bg-white rounded-full animate-twinkle z-10" style="animation-delay: 0.7s"></span>
+            <span class="absolute top-0 right-1/3 w-1.5 h-1.5 bg-white rounded-full animate-twinkle z-10" style="animation-delay: 1.3s"></span>
+            <span class="absolute top-3 right-1/4 w-1 h-1 bg-white rounded-full animate-twinkle z-10" style="animation-delay: 0.5s"></span>
+            
+            <svg class="relative block w-full h-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" 
+                      class="fill-white"></path>
+            </svg>
+        </div>
+    </div>
+</header>
+
+    <!-- Features Section with Enhanced Design & Animations -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <!-- Subtle cosmic background elements -->
+            <!-- Subtle constellation -->
+            <div class="constellation-orion absolute top-1/2 left-20 transform -translate-y-1/2 scale-100 opacity-5"></div>
+        </div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 relative inline-block mb-6">
+                    L'Expérience Orion
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cosmic-400 to-nebula-400 rounded-full overflow-hidden">
+                        <span class="absolute inset-0 bg-white/30 animate-pulse-slow"></span>
+                    </span>
+                    <!-- Subtle star decoration -->
+                    <span class="absolute -top-3 right-0 w-1.5 h-1.5 bg-cosmic-300 rounded-full opacity-30 animate-twinkle"></span>
+                    <span class="absolute -top-2 right-10 w-1 h-1 bg-nebula-300 rounded-full opacity-20 animate-twinkle" style="animation-delay: 0.5s"></span>
+                </h2>           
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Feature 1 - Enhanced with hover effects & animations -->
+                <div class="flex flex-col items-center text-center group hover:translate-y-[-8px] transition-all duration-500 relative" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Subtle cosmic background on hover -->
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-cosmic-50 to-nebula-50 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    
+                    <div class="w-20 h-20 bg-nebula-100 rounded-full flex items-center justify-center mb-6 shadow-md group-hover:bg-nebula-200 group-hover:shadow-nebula-200/50 transition-all duration-500 relative z-10">
+                        <i class="fas fa-certificate text-nebula-600 text-3xl group-hover:text-nebula-700 group-hover:scale-110 transition-all duration-500"></i>
+                        
+                        <!-- Orbital ring that appears on hover -->
+                        <span class="absolute inset-0 border border-nebula-300/40 rounded-full scale-0 group-hover:scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700"></span>
+                        <span class="absolute inset-[-5px] border border-nebula-300/20 rounded-full scale-0 group-hover:scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100"></span>
+                    </div>
+                    
+                    <h3 class="font-serif text-xl font-semibold mb-3 relative z-10">Expertise Professionnelle</h3>
+                    <p class="text-gray-600 max-w-xs relative z-10">Oriane est certifiée en diverses techniques de massage et poursuit régulièrement des formations pour enrichir ses connaissances.</p>
+                    
+                    <!-- Animated underline with cosmic gradient -->
+                    <div class="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-nebula-300 to-nebula-400 mt-4 transition-all duration-500 relative z-10"></div>
+                    
+                    <!-- Subtle stars that appear on hover -->
+                    <span class="absolute top-1/3 right-10 w-1 h-1 bg-nebula-400 rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-700 delay-200"></span>
+                    <span class="absolute bottom-10 left-10 w-1.5 h-1.5 bg-nebula-300 rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-700 delay-300"></span>
+                </div>
+                
+                <!-- Feature 2 - Enhanced with hover effects & animations -->
+                <div class="flex flex-col items-center text-center group hover:translate-y-[-8px] transition-all duration-500 relative" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Subtle cosmic background on hover -->
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-cosmic-50 to-nebula-50 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    
+                    <div class="w-20 h-20 bg-cosmic-100 rounded-full flex items-center justify-center mb-6 shadow-md group-hover:bg-cosmic-200 group-hover:shadow-cosmic-200/50 transition-all duration-500 relative z-10">
+                        <i class="fas fa-leaf text-cosmic-600 text-3xl group-hover:text-cosmic-700 group-hover:scale-110 transition-all duration-500"></i>
+                        
+                        <!-- Orbital ring that appears on hover -->
+                        <span class="absolute inset-0 border border-cosmic-300/40 rounded-full scale-0 group-hover:scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700"></span>
+                        <span class="absolute inset-[-5px] border border-cosmic-300/20 rounded-full scale-0 group-hover:scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100"></span>
+                    </div>
+                    
+                    <h3 class="font-serif text-xl font-semibold mb-3 relative z-10">Produits Naturels</h3>
+                    <p class="text-gray-600 max-w-xs relative z-10">Huiles essentielles et produits biologiques sélectionnés avec soin pour une expérience 100% naturelle et respectueuse de votre peau.</p>
+                    
+                    <!-- Animated underline with cosmic gradient -->
+                    <div class="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-cosmic-300 to-cosmic-400 mt-4 transition-all duration-500 relative z-10"></div>
+                    
+                    <!-- Subtle stars that appear on hover -->
+                    <span class="absolute top-1/3 right-10 w-1 h-1 bg-cosmic-400 rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-700 delay-200"></span>
+                    <span class="absolute bottom-10 left-10 w-1.5 h-1.5 bg-cosmic-300 rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-700 delay-300"></span>
+                </div>
+                
+                <!-- Feature 3 - Enhanced with hover effects & animations -->
+                <div class="flex flex-col items-center text-center group hover:translate-y-[-8px] transition-all duration-500 relative" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Subtle cosmic background on hover -->
+                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-cosmic-50 to-nebula-50 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                    
+                    <div class="w-20 h-20 bg-nebula-100 rounded-full flex items-center justify-center mb-6 shadow-md group-hover:bg-nebula-200 group-hover:shadow-nebula-200/50 transition-all duration-500 relative z-10">
+                        <i class="fas fa-star text-nebula-600 text-3xl group-hover:text-nebula-700 group-hover:scale-110 transition-all duration-500"></i>
+                        
+                        <!-- Orbital ring that appears on hover -->
+                        <span class="absolute inset-0 border border-nebula-300/40 rounded-full scale-0 group-hover:scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700"></span>
+                        <span class="absolute inset-[-5px] border border-nebula-300/20 rounded-full scale-0 group-hover:scale-125 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100"></span>
+                    </div>
+                    
+                    <h3 class="font-serif text-xl font-semibold mb-3 relative z-10">Approche Personnalisée</h3>
+                    <p class="text-gray-600 max-w-xs relative z-10">Chaque séance est adaptée à vos besoins spécifiques, créant une expérience sur mesure qui respecte votre corps et vos préférences.</p>
+                    
+                    <!-- Animated underline with cosmic gradient -->
+                    <div class="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-nebula-300 to-nebula-400 mt-4 transition-all duration-500 relative z-10"></div>
+                    
+                    <!-- Subtle stars that appear on hover -->
+                    <span class="absolute top-1/3 right-10 w-1 h-1 bg-nebula-400 rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-700 delay-200"></span>
+                    <span class="absolute bottom-10 left-10 w-1.5 h-1.5 bg-nebula-300 rounded-full opacity-0 group-hover:opacity-60 transition-opacity duration-700 delay-300"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section with Cosmic Theme -->
+    <section id="about" class="py-16 bg-slate-50 relative overflow-hidden">
+        <!-- Subtle background elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-40 right-20 w-60 h-60 opacity-5 transform rotate-12">
+                <div class="constellation-orion w-full h-full"></div>
+            </div>
+            <span class="absolute top-1/4 right-1/3 w-1 h-1 bg-cosmic-500 rounded-full animate-twinkle opacity-30"></span>
+            <span class="absolute bottom-1/3 left-1/4 w-1.5 h-1.5 bg-cosmic-400 rounded-full animate-twinkle opacity-30" style="animation-delay: 1.2s"></span>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <!-- Image column -->
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="relative">
+                        <div class="tilt-on-hover relative z-10 rounded-lg shadow-xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556760544-74068565f05c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Espace de massage Orion" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-cosmic-900/20 to-transparent"></div>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-nebula-100 rounded-full z-0 border border-cosmic-200"></div>
+                        <div class="absolute -top-5 -right-5 w-20 h-20 bg-cosmic-100 rounded-full z-0 border border-nebula-200"></div>
+                    </div>
+                </div>
+                
+                <!-- Content column -->
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <div class="space-y-4">
+                        <div>
+                            <div class="relative mb-1">
+                            <span class="text-xs font-medium text-cosmic-600 bg-cosmic-100 px-4 py-1.5 rounded-full inline-flex items-center shadow-sm group transition-all duration-300">
+                                <span class="absolute -inset-0.5 bg-gradient-to-r from-cosmic-200 to-nebula-200 opacity-0 rounded-full blur-sm transition-opacity duration-300"></span>
+                                <i class="fas fa-star mr-2 text-cosmic-500 relative z-10"></i>
+                                <span class="relative z-10">À Propos</span>
+                            </span>
+                        </div>
+
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 relative inline-block mb-6">
+                            Orion Massage en bref
+                            <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cosmic-400 to-nebula-400 rounded-full overflow-hidden">
+                                <span class="absolute inset-0 bg-white/30 animate-pulse-slow"></span>
+                            </span>
+                            <!-- Subtle star decoration -->
+                            <span class="absolute -top-3 right-0 w-1.5 h-1.5 bg-cosmic-300 rounded-full opacity-30 animate-twinkle"></span>
+                            <span class="absolute -top-2 right-10 w-1 h-1 bg-nebula-300 rounded-full opacity-20 animate-twinkle" style="animation-delay: 0.5s"></span>
+                        </h2>
+                        </div>
+                        
+                        
+                        <p class="text-gray-700">Fondé par Oriane en 2025, Orion Massage est né d'une passion pour le bien-être holistique. Inspiré par la constellation d'Orion, ce sanctuaire de relaxation vous invite à un voyage sensoriel unique où techniques traditionnelles et approche intuitive se rencontrent.</p>
+                        
+                        <div class="grid grid-cols-2 gap-3 mt-2">
+                            <div class="flex items-center space-x-2 group">
+                                <div class="w-8 h-8 rounded-full bg-cosmic-100 flex items-center justify-center group-hover:bg-cosmic-200 transition-colors">
+                                    <i class="fas fa-certificate text-cosmic-600 text-sm"></i>
+                                </div>
+                                <span class="text-sm">Thérapeute certifiée</span>
+                            </div>
+                            <div class="flex items-center space-x-2 group">
+                                <div class="w-8 h-8 rounded-full bg-cosmic-100 flex items-center justify-center group-hover:bg-cosmic-200 transition-colors">
+                                    <i class="fas fa-star text-cosmic-600 text-sm"></i>
+                                </div>
+                                <span class="text-sm">Expérience unique</span>
+                            </div>
+                            <div class="flex items-center space-x-2 group">
+                                <div class="w-8 h-8 rounded-full bg-cosmic-100 flex items-center justify-center group-hover:bg-cosmic-200 transition-colors">
+                                    <i class="fas fa-seedling text-cosmic-600 text-sm"></i>
+                                </div>
+                                <span class="text-sm">Produits naturels</span>
+                            </div>
+                            <div class="flex items-center space-x-2 group">
+                                <div class="w-8 h-8 rounded-full bg-cosmic-100 flex items-center justify-center group-hover:bg-cosmic-200 transition-colors">
+                                    <i class="fas fa-user-circle text-cosmic-600 text-sm"></i>
+                                </div>
+                                <span class="text-sm">Soins personnalisés</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Meet Oriane - simplified -->
+                        <div class="bg-white rounded-xl shadow-sm border border-cosmic-100 p-4 mt-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 border-2 border-cosmic-200">
+                                    <img src="https://images.unsplash.com/vector-1742828275705-20c2eb7ff245?q=80&w=2416" alt="Oriane" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h3 class="font-serif text-lg font-bold mb-1 text-gray-800">Oriane</h3>
+                                    <p class="text-gray-700 text-sm">Passionnée par le bien-être, j'ai créé Orion Massage pour offrir un espace où corps et esprit retrouvent leur équilibre naturel.</p>
+                                    <div class="flex items-center text-xs text-cosmic-600 mt-1">
+                                        <i class="fas fa-graduation-cap mr-1"></i>
+                                        <span>Certifiée en massages bien-êtres</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wave separator -->
+        <div class="absolute -bottom-1 left-0 right-0 overflow-hidden leading-none rotate-180">
+            <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+            </svg>
+        </div>
+    </section>
+
+
+<!-- Services Section with Cosmic Theme -->
+<section id="services" class="py-20 bg-white relative overflow-hidden">
+    <!-- Cosmic background elements -->
+    <div class="absolute inset-0 pointer-events-none">
+        <!-- Subtle constellation background -->
+        <div class="absolute top-1/4 left-1/4 w-80 h-80 opacity-5 transform -rotate-12">
+            <div class="constellation-orion w-full h-full"></div>
+        </div>
+        <div class="absolute bottom-1/4 right-1/4 w-60 h-60 opacity-5 transform rotate-45">
+            <div class="constellation-orion w-full h-full"></div>
+        </div>
+    
+    </div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+            <div>
+                <div class="relative mb-1">
+                <span class="text-xs font-medium text-cosmic-600 bg-cosmic-100 px-4 py-1.5 rounded-full inline-flex items-center shadow-sm group transition-all duration-300">
+                    <span class="absolute -inset-0.5 bg-gradient-to-r from-cosmic-200 to-nebula-200 opacity-0 rounded-full blur-sm transition-opacity duration-300"></span>
+                    <i class="fas fa-star mr-2 text-cosmic-500 relative z-10"></i>
+                    <span class="relative z-10">Prestations</span>
+                </span>
+            </div>
+
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 relative inline-block mb-6">
+                Nos massages bien-être
+                <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cosmic-400 to-nebula-400 rounded-full overflow-hidden">
+                    <span class="absolute inset-0 bg-white/30 animate-pulse-slow"></span>
+                </span>
+                <!-- Subtle star decoration -->
+                <span class="absolute -top-3 right-0 w-1.5 h-1.5 bg-cosmic-300 rounded-full opacity-30 animate-twinkle"></span>
+                <span class="absolute -top-2 right-10 w-1 h-1 bg-nebula-300 rounded-full opacity-20 animate-twinkle" style="animation-delay: 0.5s"></span>
+            </h2>
+            </div>
+            <p class="text-gray-600">Découvrez notre gamme de massages thérapeutiques conçus pour répondre à vos besoins spécifiques et améliorer votre bien-être.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Massage Relaxant - Enhanced Card -->
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden group hover-card reveal hover:bg-gradient-to-br hover:from-white hover:to-cosmic-50 transition-all duration-500 border border-transparent hover:border-cosmic-100" style="animation-delay: 0.1s">
+                <div class="h-56 bg-nebula-100 relative overflow-hidden">
+                    <!-- Cosmic overlay on hover -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-cosmic-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                    
+                    <!-- Stars that appear on hover -->
+                    <div class="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        <div class="absolute top-5 left-10 w-1 h-1 bg-white rounded-full animate-twinkle"></div>
+                        <div class="absolute top-20 right-20 w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 0.5s"></div>
+                        <div class="absolute bottom-10 left-1/4 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 1s"></div>
+                    </div>
+                    
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Massage Relaxant" 
+                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="w-full p-6">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="bg-cosmic-500 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full shadow-lg flex items-center">
+                                    <i class="fas fa-star mr-1 text-yellow-200"></i>
+                                    Bestseller
+                                </span>
+                                <span class="text-white/90 text-sm">✧ ✧ ✧</span>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white mt-2 group-hover:text-cosmic-100 transition-colors">Massage Californien</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 relative">
+                    <!-- Subtle cosmic background that appears on hover -->
+                    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIwLjUiIGZpbGw9IiM4ODhhYjkiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMzAiIGN5PSIyMCIgcj0iMC41IiBmaWxsPSIjODg4YWI5IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iMzAiIHI9IjAuNSIgZmlsbD0iIzg4OGFiOSIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=')]
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center text-amber-400 mb-3">
+                            <i class="fas fa-star text-sm"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <span class="text-gray-500 text-sm ml-2">(128 avis)</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6 group-hover:text-gray-700 transition-colors">
+                            <span class="italic text-cosmic-600">Comme une douce pluie d'étoiles</span>, ce massage utilise des mouvements fluides et amples pour vous conduire vers une profonde relaxation.
+                        </p>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="bg-nebula-50 text-cosmic-700 font-medium px-4 py-1.5 rounded-full shadow-sm group-hover:bg-cosmic-100 transition-colors duration-300 flex items-center">
+                                <i class="far fa-clock mr-1.5 text-cosmic-500"></i>
+                                60 min | 75€
+                            </span>
+                            <a href="#contact" class="group inline-flex items-center text-cosmic-600 font-medium">
+                                Réserver
+                                <span class="w-7 h-7 flex items-center justify-center rounded-full bg-cosmic-100 ml-2 group-hover:bg-cosmic-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-arrow-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Massage Profond - Enhanced Card -->
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden group hover-card reveal hover:bg-gradient-to-br hover:from-white hover:to-cosmic-50 transition-all duration-500 border border-transparent hover:border-cosmic-100" style="animation-delay: 0.2s">
+                <div class="h-56 bg-nebula-100 relative overflow-hidden">
+                    <!-- Cosmic overlay on hover -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-nebula-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                    
+                    <!-- Stars that appear on hover -->
+                    <div class="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        <div class="absolute top-10 left-20 w-1.5 h-1.5 bg-white rounded-full animate-twinkle"></div>
+                        <div class="absolute top-30 right-10 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 0.7s"></div>
+                        <div class="absolute bottom-15 left-1/3 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 1.3s"></div>
+                    </div>
+                    
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Massage Profond" 
+                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="w-full p-6">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="bg-nebula-500 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full shadow-lg flex items-center">
+                                    <i class="fas fa-moon mr-1.5"></i>
+                                    Intensité
+                                </span>
+                                <span class="text-white/90 text-sm">✧ ✧ ✧</span>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white mt-2 group-hover:text-nebula-100 transition-colors">Massage Profond</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 relative">
+                    <!-- Subtle cosmic background that appears on hover -->
+                    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIwLjUiIGZpbGw9IiM4ODhhYjkiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMzAiIGN5PSIyMCIgcj0iMC41IiBmaWxsPSIjODg4YWI5IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iMzAiIHI9IjAuNSIgZmlsbD0iIzg4OGFiOSIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=')]
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center text-amber-400 mb-3">
+                            <i class="fas fa-star text-sm"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <i class="fas fa-star-half-alt text-sm ml-1"></i>
+                            <span class="text-gray-500 text-sm ml-2">(94 avis)</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6 group-hover:text-gray-700 transition-colors">
+                            <span class="italic text-nebula-600">Comme l'attraction gravitationnelle</span>, ce massage cible les tensions profondes pour libérer les nœuds musculaires tenaces.
+                        </p>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="bg-nebula-50 text-cosmic-700 font-medium px-4 py-1.5 rounded-full shadow-sm group-hover:bg-cosmic-100 transition-colors duration-300 flex items-center">
+                                <i class="far fa-clock mr-1.5 text-cosmic-500"></i>
+                                60 min | 85€
+                            </span>
+                            <a href="#contact" class="group inline-flex items-center text-cosmic-600 font-medium">
+                                Réserver
+                                <span class="w-7 h-7 flex items-center justify-center rounded-full bg-cosmic-100 ml-2 group-hover:bg-cosmic-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-arrow-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Massage Sportif - Enhanced Card -->
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden group hover-card reveal hover:bg-gradient-to-br hover:from-white hover:to-cosmic-50 transition-all duration-500 border border-transparent hover:border-cosmic-100" style="animation-delay: 0.3s">
+                <div class="h-56 bg-nebula-100 relative overflow-hidden">
+                    <!-- Cosmic overlay on hover -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-cosmic-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                    
+                    <!-- Stars that appear on hover -->
+                    <div class="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        <div class="absolute top-15 left-5 w-1 h-1 bg-white rounded-full animate-twinkle"></div>
+                        <div class="absolute top-10 right-30 w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 0.9s"></div>
+                        <div class="absolute bottom-20 left-2/3 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 1.5s"></div>
+                    </div>
+                    
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Massage Sportif" 
+                         class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="w-full p-6">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="bg-cosmic-500 text-white text-xs uppercase tracking-wider px-3 py-1 rounded-full shadow-lg flex items-center">
+                                    <i class="fas fa-running mr-1.5"></i>
+                                    Dynamique
+                                </span>
+                                <span class="text-white/90 text-sm">✧ ✧ ✧</span>
+                            </div>
+                            <h3 class="font-serif text-2xl font-bold text-white mt-2 group-hover:text-cosmic-100 transition-colors">Massage Sportif</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6 relative">
+                    <!-- Subtle cosmic background that appears on hover -->
+                    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIwLjUiIGZpbGw9IiM4ODhhYjkiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PGNpcmNsZSBjeD0iMzAiIGN5PSIyMCIgcj0iMC41IiBmaWxsPSIjODg4YWI5IiBmaWxsLW9wYWNpdHk9IjAuMSIvPjxjaXJjbGUgY3g9IjIwIiBjeT0iMzAiIHI9IjAuNSIgZmlsbD0iIzg4OGFiOSIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=')]
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center text-amber-400 mb-3">
+                            <i class="fas fa-star text-sm"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <i class="fas fa-star text-sm ml-1"></i>
+                            <i class="fas fa-star-half-alt text-sm ml-1"></i>
+                            <span class="text-gray-500 text-sm ml-2">(73 avis)</span>
+                        </div>
+                        
+                        <p class="text-gray-600 mb-6 group-hover:text-gray-700 transition-colors">
+                            <span class="italic text-cosmic-600">Comme une étoile filante</span>, ce massage dynamique cible les zones musculaires sollicitées par l'effort physique.
+                        </p>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="bg-nebula-50 text-cosmic-700 font-medium px-4 py-1.5 rounded-full shadow-sm group-hover:bg-cosmic-100 transition-colors duration-300 flex items-center">
+                                <i class="far fa-clock mr-1.5 text-cosmic-500"></i>
+                                60 min | 85€
+                            </span>
+                            <a href="#contact" class="group inline-flex items-center text-cosmic-600 font-medium">
+                                Réserver
+                                <span class="w-7 h-7 flex items-center justify-center rounded-full bg-cosmic-100 ml-2 group-hover:bg-cosmic-500 group-hover:text-white transition-all duration-300">
+                                    <i class="fas fa-arrow-right text-xs group-hover:translate-x-0.5 transition-transform"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Featured Service -->
+        <div class="mt-16 bg-gradient-to-br from-cosmic-50 to-nebula-50 rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="700">
+            <div class="relative">
+                <!-- Decorative elements -->
+                <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+                    <div class="constellation-orion absolute top-0 right-0 w-60 h-60 transform rotate-45"></div>
+                    <div class="constellation-orion absolute bottom-0 left-0 w-60 h-60 transform -rotate-12"></div>
+                </div>
+                
+                <div class="flex flex-col lg:flex-row">
+                    <div class="lg:w-7/12 p-8 lg:p-10">
+                        <span class="text-sm font-medium text-cosmic-600 bg-white px-4 py-1.5 rounded-full inline-flex items-center mb-4 shadow-sm">
+                            <i class="fas fa-award mr-2 text-cosmic-500"></i>
+                            Expérience Signature
+                        </span>
+                        
+                        <h3 class="font-serif text-2xl lg:text-3xl font-bold mb-4 text-gray-800">Rituel Cosmique Complet</h3>
+                        
+                        <p class="text-gray-700 mb-6">Découvrez notre expérience signature qui combine plusieurs techniques de massage avec des soins du visage express et une séance de relaxation guidée. Ce voyage sensoriel complet vous transporte vers un état de relaxation profonde tout en revitalisant corps et esprit.</p>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-star-of-life text-cosmic-500 mt-1 mr-3"></i>
+                                <span>Massage personnalisé du corps entier</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star-of-life text-cosmic-500 mt-1 mr-3"></i>
+                                <span>Soin du visage revitalisant avec cristaux</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star-of-life text-cosmic-500 mt-1 mr-3"></i>
+                                <span>Aromathérapie avec huiles essentielles bio</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-star-of-life text-cosmic-500 mt-1 mr-3"></i>
+                                <span>Relaxation guidée sous le ciel étoilé</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-semibold text-cosmic-600">120 min | 150€</span>
+                            <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-cosmic-500 to-nebula-500 hover:from-cosmic-600 hover:to-nebula-600 text-white rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center">
+                                Réserver cette expérience
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-5/12 relative">
+                        <div class="h-full">
+                            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rituel Cosmique Complet" class="w-full h-full object-cover object-center">
+                            <div class="absolute inset-0 bg-gradient-to-r from-cosmic-900/40 to-transparent"></div>
+                        </div>
+                        
+                        <!-- Decorative star elements -->
+                        <span class="absolute top-10 right-10 w-2 h-2 bg-white rounded-full animate-twinkle"></span>
+                        <span class="absolute bottom-20 right-16 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 1.5s"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Enhanced Call to Action Section with Cosmic Theme -->
+<section class="py-20 bg-gradient-to-br from-[#0A0F2C] to-[#152056] relative overflow-hidden">
+    <!-- Cosmic background elements -->
+    <div class="absolute inset-0 pointer-events-none">
+        <!-- Nebula effects -->
+        <div class="absolute top-0 left-1/3 w-96 h-96 bg-cosmic-500/15 rounded-full filter blur-[120px]"></div>
+        <div class="absolute bottom-0 right-1/3 w-80 h-80 bg-nebula-500/15 rounded-full filter blur-[100px]"></div>
+    
+        <!-- Dynamic star field with layered parallax -->
+        <div class="absolute inset-0" class="starfield">
+            <!-- Generated via JS for better performance -->
+        </div>
+
+        <!-- Animated stars -->
+        <div class="absolute inset-0 opacity-60">
+            <span class="absolute top-1/4 left-1/5 w-1.5 h-1.5 bg-white rounded-full animate-twinkle"></span>
+            <span class="absolute top-3/4 left-2/3 w-2 h-2 bg-white rounded-full animate-twinkle" style="animation-delay: 0.7s"></span>
+            <span class="absolute top-1/3 right-1/4 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 1.3s"></span>
+            <span class="absolute bottom-1/4 right-1/2 w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 0.5s"></span>
+            <span class="absolute bottom-1/3 left-1/3 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 2s"></span>
+        </div>
+        
+        <!-- Constellation -->
+        <div class="absolute top-1/2 left-1/2 w-60 h-60 opacity-15 transform -translate-x-1/2 -translate-y-1/2">
+            <div class="constellation-orion w-full h-full transform scale-150"></div>
+        </div>
+        
+        <!-- Orbital rings -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10">
+            <div class="absolute inset-0 border border-cosmic-300 rounded-full animate-spin-slow" style="animation-duration: 60s;"></div>
+            <div class="absolute inset-[100px] border border-nebula-300 rounded-full animate-spin-slow" style="animation-duration: 45s; animation-direction: reverse;"></div>
+            <div class="absolute inset-[200px] border border-cosmic-200 rounded-full animate-spin-slow" style="animation-duration: 30s;"></div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                Vivez une Expérience <span class="bg-clip-text text-transparent bg-gradient-to-r from-cosmic-300 to-nebula-200">Stellaire</span> de Bien-être
+            </h2>
+            
+            <p class="text-gray-300 text-xl mb-10 leading-relaxed">
+                Réservez dès maintenant votre voyage sensoriel et permettez à votre corps et votre esprit de s'élever vers un nouvel état de relaxation.
+            </p>
+            
+            <!-- Multi-CTA with enchanced animations -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <!-- Primary CTA Button -->
+                <a href="#contact" class="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-cosmic-500 to-nebula-500 text-white font-medium rounded-full shadow-lg hover:shadow-cosmic-500/30 transition-all duration-500 w-full sm:w-auto text-center">
+                    <span class="relative z-10 flex items-center justify-center">
+                        <i class="fas fa-calendar-alt mr-2 group-hover:rotate-12 transition-transform duration-300"></i>
+                        Réserver un Massage
+                    </span>
+                    
+                    <!-- Enhanced cosmic particles on hover -->
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none">
+                        <span class="absolute top-2 left-1/4 w-2 h-2 bg-white rounded-full animate-twinkle"></span>
+                        <span class="absolute bottom-2 right-1/4 w-1.5 h-1.5 bg-white rounded-full animate-twinkle" style="animation-delay: 0.5s"></span>
+                        <span class="absolute top-3 right-1/3 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 1s"></span>
+                    </div>
+                    
+                    <!-- Ripple effect on click -->
+                    <span class="ripple-effect bg-white/30"></span>
+                </a>
+            </div>
+            
+            <!-- Additional info with visual elements -->
+            <div class="mt-10 flex flex-wrap justify-center gap-8 text-center">
+                <!-- Feature 1 -->
+                <div class="bg-white/5 rounded-lg p-4 w-full sm:w-auto backdrop-blur-sm flex items-center gap-3 group hover:bg-white/10 transition-colors duration-300">
+                    <div class="w-12 h-12 rounded-full bg-cosmic-500/20 flex items-center justify-center text-cosmic-300 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-history text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="text-white font-medium">Réponse Rapide</h4>
+                        <p class="text-gray-400 text-sm">Confirmation sous 2h</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white/5 rounded-lg p-4 w-full sm:w-auto backdrop-blur-sm flex items-center gap-3 group hover:bg-white/10 transition-colors duration-300">
+                    <div class="w-12 h-12 rounded-full bg-nebula-500/20 flex items-center justify-center text-nebula-300 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-gift text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="text-white font-medium">Première Visite</h4>
+                        <p class="text-gray-400 text-sm">-15% sur votre massage</p>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white/5 rounded-lg p-4 w-full sm:w-auto backdrop-blur-sm flex items-center gap-3 group hover:bg-white/10 transition-colors duration-300">
+                    <div class="w-12 h-12 rounded-full bg-cosmic-500/20 flex items-center justify-center text-cosmic-300 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shield-alt text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="text-white font-medium">Annulation Flexible</h4>
+                        <p class="text-gray-400 text-sm">Jusqu'à 24h avant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Wave divider at bottom -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none rotate-180">
+        <svg class="relative block w-full h-16" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" 
+                class="fill-slate-50"></path>
+        </svg>
+    </div>
+</section>
+
+    <section id="testimonials" class="py-20 bg-slate-50 relative overflow-hidden">
+        <!-- Cosmic background elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <!-- Subtle constellation -->
+            <div class="constellation-orion absolute bottom-1/4 left-1/4 opacity-5 transform rotate-12"></div>
+            
+            <!-- Animated stars -->
+            <span class="absolute top-1/4 left-1/3 w-1 h-1 bg-cosmic-500 rounded-full animate-twinkle opacity-30"></span>
+            <span class="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-cosmic-400 rounded-full animate-twinkle opacity-30" style="animation-delay: 1.2s"></span>
+            <span class="absolute top-1/2 right-1/3 w-1 h-1 bg-nebula-500 rounded-full animate-twinkle opacity-30" style="animation-delay: 0.7s"></span>
+        </div>
+    
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <div>
+                    <div class="relative mb-1">
+                    <span class="text-xs font-medium text-cosmic-600 bg-cosmic-100 px-4 py-1.5 rounded-full inline-flex items-center shadow-sm group transition-all duration-300">
+                        <span class="absolute -inset-0.5 bg-gradient-to-r from-cosmic-200 to-nebula-200 opacity-0 rounded-full blur-sm transition-opacity duration-300"></span>
+                        <i class="fas fa-star mr-2 text-cosmic-500 relative z-10"></i>
+                        <span class="relative z-10">Témoignages</span>
+                    </span>
+                </div>
+    
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 relative inline-block mb-6">
+                    Nos clients nous recommendent
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cosmic-400 to-nebula-400 rounded-full overflow-hidden">
+                        <span class="absolute inset-0 bg-white/30 animate-pulse-slow"></span>
+                    </span>
+                    <!-- Subtle star decoration -->
+                    <span class="absolute -top-3 right-0 w-1.5 h-1.5 bg-cosmic-300 rounded-full opacity-30 animate-twinkle"></span>
+                    <span class="absolute -top-2 right-10 w-1 h-1 bg-nebula-300 rounded-full opacity-20 animate-twinkle" style="animation-delay: 0.5s"></span>
+                </h2>
+                </div>
+                <p class="text-gray-600">Découvrez les témoignages de clients satisfaits qui ont vécu l'expérience Orion Massage.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 - Enhanced with hover effects & cosmic elements -->
+                <div class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Cosmic accent on hover -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cosmic-400 to-nebula-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                    
+                    <!-- Star rating with enhanced animation -->
+                    <div class="flex items-center mb-4">
+                        <div class="text-cosmic-500">
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.05s"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.1s"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.15s"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.2s"></i>
+                        </div>
+                        
+                        <!-- Subtle star that appears on hover -->
+                        <span class="w-1 h-1 bg-cosmic-300 rounded-full ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                    </div>
+                    
+                    <!-- Quote with enhanced typography -->
+                    <p class="text-gray-700 mb-6 relative">
+                        <!-- Decorative quote mark -->
+                        <span class="absolute -top-2 -left-1 text-4xl text-cosmic-100 font-serif">"</span>
+                        <span class="relative z-10">Le meilleur massage de ma vie ! Oriane a vraiment écouté mes préoccupations et a parfaitement adapté la séance. Je suis sortie complètement ressourcée et libérée des douleurs dorsales que j'avais depuis des semaines.</span>
+                    </p>
+                    
+                    <!-- Enhanced client info with hover animations -->
+                    <div class="flex items-center relative">
+                        <!-- Client image with cosmic glow on hover -->
+                        <div class="relative">
+                            <div class="w-12 h-12 bg-nebula-200 rounded-full overflow-hidden mr-4 group-hover:ring-2 group-hover:ring-cosmic-300 transition-all duration-500">
+                                <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Sophie L." class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium">Sophie L.</h4>
+                            <p class="text-sm text-gray-500">Cliente régulière</p>
+                        </div>
+                        
+                        <!-- Subtle constellation background on hover -->
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none">
+                            <div class="constellation-orion w-full h-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 - Enhanced with hover effects & cosmic elements -->
+                <div class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Cosmic accent on hover -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cosmic-400 to-nebula-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                    
+                    <!-- Star rating with enhanced animation -->
+                    <div class="flex items-center mb-4">
+                        <div class="text-cosmic-500">
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.05s"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.1s"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.15s"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.2s"></i>
+                        </div>
+                        
+                        <!-- Subtle star that appears on hover -->
+                        <span class="w-1 h-1 bg-cosmic-300 rounded-full ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                    </div>
+                    
+                    <!-- Quote with enhanced typography -->
+                    <p class="text-gray-700 mb-6 relative">
+                        <!-- Decorative quote mark -->
+                        <span class="absolute -top-2 -left-1 text-4xl text-cosmic-100 font-serif">"</span>
+                        <span class="relative z-10">Un environnement serein et une thérapeute compétente. J'ai essayé de nombreux centres de massage en ville, mais Orion se démarque vraiment. Le massage Céleste était divin - je reviendrai certainement régulièrement !</span>
+                    </p>
+                    
+                    <!-- Enhanced client info with hover animations -->
+                    <div class="flex items-center relative">
+                        <!-- Client image with cosmic glow on hover -->
+                        <div class="relative">
+                            <div class="w-12 h-12 bg-nebula-200 rounded-full overflow-hidden mr-4 group-hover:ring-2 group-hover:ring-cosmic-300 transition-all duration-500">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marc T." class="w-full h-full object-cover">
+                            </div>
+                            <!-- Subtle glow effect on hover -->
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium">Marc T.</h4>
+                            <p class="text-sm text-gray-500">Nouveau client</p>
+                        </div>
+                        
+                        <!-- Subtle constellation background on hover -->
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none">
+                            <div class="constellation-orion w-full h-full"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 - Enhanced with hover effects & cosmic elements -->
+                <div class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Cosmic accent on hover -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cosmic-400 to-nebula-400 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                    
+                    <!-- Star rating with enhanced animation -->
+                    <div class="flex items-center mb-4">
+                        <div class="text-cosmic-500">
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.05s"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.1s"></i>
+                            <i class="fas fa-star transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.15s"></i>
+                            <i class="fas fa-star-half-alt transform group-hover:scale-110 transition-transform duration-300" style="transition-delay: 0.2s"></i>
+                        </div>
+                        
+                        <!-- Subtle star that appears on hover -->
+                        <span class="w-1 h-1 bg-cosmic-300 rounded-full ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                    </div>
+                    
+                    <!-- Quote with enhanced typography -->
+                    <p class="text-gray-700 mb-6 relative">
+                        <!-- Decorative quote mark -->
+                        <span class="absolute -top-2 -left-1 text-4xl text-cosmic-100 font-serif">"</span>
+                        <span class="relative z-10">Je fréquente Orion Massage depuis plus d'un an maintenant, et le massage profond d'Oriane a été essentiel pour soulager mes douleurs chroniques à l'épaule. Une approche personnalisée qui fait vraiment la différence.</span>
+                    </p>
+                    
+                    <!-- Enhanced client info with hover animations -->
+                    <div class="flex items-center relative">
+                        <!-- Client image with cosmic glow on hover -->
+                        <div class="relative">
+                            <div class="w-12 h-12 bg-nebula-200 rounded-full overflow-hidden mr-4 group-hover:ring-2 group-hover:ring-cosmic-300 transition-all duration-500">
+                                <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Juliette K." class="w-full h-full object-cover">
+                            </div>
+                            <!-- Subtle glow effect on hover -->
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-medium">Juliette K.</h4>
+                            <p class="text-sm text-gray-500">Cliente mensuelle</p>
+                        </div>
+                        
+                        <!-- Subtle constellation background on hover -->
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none">
+                            <div class="constellation-orion w-full h-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial navigation with cosmic styling -->
+            <!-- <div class="flex justify-center items-center mt-12 space-x-3" data-aos="fade-up" data-aos-delay="400">
+                <button class="w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-md hover:bg-cosmic-50 transition-colors duration-300 group">
+                    <i class="fas fa-chevron-left text-cosmic-500 group-hover:text-cosmic-600 transition-colors"></i>
+                </button>
+                <button class="w-2 h-2 rounded-full bg-cosmic-300 hover:bg-cosmic-400 transition-colors duration-300"></button>
+                <button class="w-2 h-2 rounded-full bg-gray-300 hover:bg-cosmic-400 transition-colors duration-300"></button>
+                <button class="w-2 h-2 rounded-full bg-gray-300 hover:bg-cosmic-400 transition-colors duration-300"></button>
+                <button class="w-10 h-10 rounded-full flex items-center justify-center bg-white shadow-md hover:bg-cosmic-50 transition-colors duration-300 group">
+                    <i class="fas fa-chevron-right text-cosmic-500 group-hover:text-cosmic-600 transition-colors"></i>
+                </button>
+            </div> -->
+        </div>
+        
+        <!-- Cosmic wave divider -->
+        <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none  rotate-180">
+            <div class="relative">
+                <!-- Subtle stars in the wave -->
+                <span class="absolute bottom-5 left-1/4 w-1.5 h-1.5 bg-cosmic-300 rounded-full animate-twinkle z-10 opacity-30"></span>
+                <span class="absolute bottom-8 left-1/2 w-1 h-1 bg-cosmic-400 rounded-full animate-twinkle z-10 opacity-30" style="animation-delay: 0.7s"></span>
+                <span class="absolute bottom-3 right-1/3 w-1 h-1 bg-nebula-300 rounded-full animate-twinkle z-10 opacity-30" style="animation-delay: 1.3s"></span>
+                
+                <svg class="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                          class="fill-white"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section with Enhanced Cosmic Elements -->
+    <section id="contact" class="py-20 bg-white relative overflow-hidden">
+        <!-- Enhanced cosmic background elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <!-- Subtle constellations -->
+            <div class="constellation-orion absolute top-1/4 right-1/4 opacity-5 transform rotate-45"></div>
+            <div class="constellation-orion absolute bottom-1/4 left-1/4 opacity-5 transform -rotate-12"></div>
+            
+            <!-- Animated stars -->
+            <span class="absolute top-1/3 left-1/3 w-1 h-1 bg-cosmic-500 rounded-full animate-twinkle opacity-30"></span>
+            <span class="absolute bottom-1/4 right-1/4 w-1.5 h-1.5 bg-cosmic-400 rounded-full animate-twinkle opacity-30" style="animation-delay: 1s"></span>
+            <span class="absolute top-1/2 right-1/3 w-1 h-1 bg-nebula-500 rounded-full animate-twinkle opacity-30" style="animation-delay: 0.5s"></span>
+        </div>
+    
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <div>
+                    <div class="relative mb-1">
+                    <span class="text-xs font-medium text-cosmic-600 bg-cosmic-100 px-4 py-1.5 rounded-full inline-flex items-center shadow-sm group transition-all duration-300">
+                        <span class="absolute -inset-0.5 bg-gradient-to-r from-cosmic-200 to-nebula-200 opacity-0 rounded-full blur-sm transition-opacity duration-300"></span>
+                        <i class="fas fa-star mr-2 text-cosmic-500 relative z-10"></i>
+                        <span class="relative z-10">Contact</span>
+                    </span>
+                </div>
+    
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800 relative inline-block mb-6">
+                    Embarquez pour l'expérience
+                    <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cosmic-400 to-nebula-400 rounded-full overflow-hidden">
+                        <span class="absolute inset-0 bg-white/30 animate-pulse-slow"></span>
+                    </span>
+                    <!-- Subtle star decoration -->
+                    <span class="absolute -top-3 right-0 w-1.5 h-1.5 bg-cosmic-300 rounded-full opacity-30 animate-twinkle"></span>
+                    <span class="absolute -top-2 right-10 w-1 h-1 bg-nebula-300 rounded-full opacity-20 animate-twinkle" style="animation-delay: 0.5s"></span>
+                </h2>
+                </div>
+                <p class="text-gray-600">Des questions ou prêt à réserver votre rendez-vous? Contactez Oriane dès aujourd'hui.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Info with Enhanced Cosmic Elements -->
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="bg-slate-50 p-8 rounded-xl shadow-lg relative overflow-hidden group hover:shadow-xl transition-shadow duration-500">
+                        <!-- Subtle cosmic background -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-cosmic-50/50 to-nebula-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        <!-- Subtle constellation in background -->
+                        <div class="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none">
+                            <div class="constellation-orion absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-150"></div>
+                        </div>
+                        
+                        <div class="relative z-10">
+                            <h3 class="font-serif text-2xl font-bold mb-6 text-gray-800">Coordonnées</h3>
+                            
+                            <div class="space-y-6 mb-8">
+                                <!-- Location with enhanced animation -->
+                                <div class="flex items-start group/item">
+                                    <div class="w-12 h-12 bg-cosmic-100 rounded-full flex items-center justify-center mr-4 shadow-md group-hover/item:bg-cosmic-200 transition-colors duration-300 relative">
+                                        <i class="fas fa-map-marker-alt text-cosmic-600 text-lg group-hover/item:text-cosmic-700 transition-colors"></i>
+                                        <!-- Orbital ring on hover -->
+                                        <span class="absolute inset-0 border border-cosmic-300/40 rounded-full scale-0 group-hover/item:scale-125 opacity-0 group-hover/item:opacity-100 transition-all duration-500"></span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-lg mb-1">Adresse</h4>
+                                        <p class="text-gray-600">16 Rue de la Constellation<br>75012 Paris, France</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Phone with enhanced animation -->
+                                <div class="flex items-start group/item">
+                                    <div class="w-12 h-12 bg-nebula-100 rounded-full flex items-center justify-center mr-4 shadow-md group-hover/item:bg-nebula-200 transition-colors duration-300 relative">
+                                        <i class="fas fa-phone-alt text-nebula-600 text-lg group-hover/item:text-nebula-700 transition-colors"></i>
+                                        <!-- Orbital ring on hover -->
+                                        <span class="absolute inset-0 border border-nebula-300/40 rounded-full scale-0 group-hover/item:scale-125 opacity-0 group-hover/item:opacity-100 transition-all duration-500"></span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-lg mb-1">Téléphone</h4>
+                                        <p class="text-gray-600">+33 1 23 45 67 89</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Email with enhanced animation -->
+                                <div class="flex items-start group/item">
+                                    <div class="w-12 h-12 bg-cosmic-100 rounded-full flex items-center justify-center mr-4 shadow-md group-hover/item:bg-cosmic-200 transition-colors duration-300 relative">
+                                        <i class="fas fa-envelope text-cosmic-600 text-lg group-hover/item:text-cosmic-700 transition-colors"></i>
+                                        <!-- Orbital ring on hover -->
+                                        <span class="absolute inset-0 border border-cosmic-300/40 rounded-full scale-0 group-hover/item:scale-125 opacity-0 group-hover/item:opacity-100 transition-all duration-500"></span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-lg mb-1">Email</h4>
+                                        <p class="text-gray-600">oriane@orion-massage.fr</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Hours with enhanced animation -->
+                                <div class="flex items-start group/item">
+                                    <div class="w-12 h-12 bg-nebula-100 rounded-full flex items-center justify-center mr-4 shadow-md group-hover/item:bg-nebula-200 transition-colors duration-300 relative">
+                                        <i class="fas fa-clock text-nebula-600 text-lg group-hover/item:text-nebula-700 transition-colors"></i>
+                                        <!-- Orbital ring on hover -->
+                                        <span class="absolute inset-0 border border-nebula-300/40 rounded-full scale-0 group-hover/item:scale-125 opacity-0 group-hover/item:opacity-100 transition-all duration-500"></span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-lg mb-1">Horaires</h4>
+                                        <p class="text-gray-600">Lun-Ven: 9h - 20h<br>Sam: 10h - 18h<br>Dim: Fermé</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Social links with cosmic hover effects -->
+                            <div class="flex space-x-4">
+                                <a href="#" class="group/link relative w-10 h-10 bg-cosmic-100 hover:bg-cosmic-200 text-cosmic-600 hover:text-cosmic-700 flex items-center justify-center rounded-full transition-colors duration-300 overflow-hidden">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <!-- Subtle stars on hover -->
+                                    <span class="absolute top-1 right-1 w-1 h-1 bg-cosmic-400 rounded-full opacity-0 group-hover/link:opacity-60 transition-opacity duration-300"></span>
+                                    <span class="absolute bottom-1 left-1 w-0.5 h-0.5 bg-cosmic-500 rounded-full opacity-0 group-hover/link:opacity-60 transition-opacity duration-300 delay-100"></span>
+                                </a>
+                                <a href="#" class="group/link relative w-10 h-10 bg-cosmic-100 hover:bg-cosmic-200 text-cosmic-600 hover:text-cosmic-700 flex items-center justify-center rounded-full transition-colors duration-300 overflow-hidden">
+                                    <i class="fab fa-instagram"></i>
+                                    <!-- Subtle stars on hover -->
+                                    <span class="absolute top-1 right-1 w-1 h-1 bg-cosmic-400 rounded-full opacity-0 group-hover/link:opacity-60 transition-opacity duration-300"></span>
+                                    <span class="absolute bottom-1 left-1 w-0.5 h-0.5 bg-cosmic-500 rounded-full opacity-0 group-hover/link:opacity-60 transition-opacity duration-300 delay-100"></span>
+                                </a>
+                                <a href="#" class="group/link relative w-10 h-10 bg-cosmic-100 hover:bg-cosmic-200 text-cosmic-600 hover:text-cosmic-700 flex items-center justify-center rounded-full transition-colors duration-300 overflow-hidden">
+                                    <i class="fab fa-twitter"></i>
+                                    <!-- Subtle stars on hover -->
+                                    <span class="absolute top-1 right-1 w-1 h-1 bg-cosmic-400 rounded-full opacity-0 group-hover/link:opacity-60 transition-opacity duration-300"></span>
+                                    <span class="absolute bottom-1 left-1 w-0.5 h-0.5 bg-cosmic-500 rounded-full opacity-0 group-hover/link:opacity-60 transition-opacity duration-300 delay-100"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form with Cosmic Elements -->
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="bg-white rounded-xl shadow-lg p-8 relative overflow-hidden">
+                        <!-- Subtle gradient border -->
+                        <div class="absolute inset-0 p-0.5 rounded-xl bg-gradient-to-br from-cosmic-300 to-nebula-300 opacity-40"></div>
+                        
+                        <div class="relative z-10">
+                            <h3 class="font-serif text-2xl font-bold mb-6 text-gray-800">Réservez Votre Séance</h3>
+                            
+                            <form id="contact-form" class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Name field with cosmic focus effects -->
+                                    <div class="relative group">
+                                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom Complet</label>
+                                        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-cosmic-500 transition-all" required>
+                                        
+                                        <!-- Subtle star that appears on focus -->
+                                        <span class="absolute right-3 top-1/2 transform translate-y-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></span>
+                                    </div>
+                                    
+                                    <!-- Email field with cosmic focus effects -->
+                                    <div class="relative group">
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-cosmic-500 transition-all" required>
+                                        
+                                        <!-- Subtle star that appears on focus -->
+                                        <span class="absolute right-3 top-1/2 transform translate-y-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <!-- Phone field with cosmic focus effects -->
+                                    <div class="relative group">
+                                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                                        <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-cosmic-500 transition-all" required>
+                                        
+                                        <!-- Subtle star that appears on focus -->
+                                        <span class="absolute right-3 top-1/2 transform translate-y-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></span>
+                                    </div>
+                                    
+                                    <!-- Service selection with cosmic focus effects -->
+                                    <div class="relative group">
+                                        <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service</label>
+                                        <select id="service" name="service" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-cosmic-500 transition-all appearance-none" required>
+                                            <option value="">Sélectionnez un service</option>
+                                            <option value="relaxant">Massage Relaxant</option>
+                                            <option value="profond">Massage Profond</option>
+                                            <option value="celeste">Massage Céleste</option>
+                                            <option value="pierres">Massage aux Pierres Chaudes</option>
+                                            <option value="aromatherapie">Aromathérapie</option>
+                                        </select>
+                                        
+                                        <!-- Custom dropdown arrow -->
+                                        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none mt-6">
+                                            <i class="fas fa-chevron-down text-gray-400"></i>
+                                        </div>
+                                        
+                                        <!-- Subtle star that appears on focus -->
+                                        <span class="absolute right-8 top-1/2 transform translate-y-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Date selection with cosmic focus effects -->
+                                <div class="relative group">
+                                    <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Date Souhaitée</label>
+                                    <input type="date" id="date" name="date" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-cosmic-500 transition-all" required>
+                                    
+                                    <!-- Subtle star that appears on focus -->
+                                    <span class="absolute right-3 top-1/2 transform translate-y-1 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></span>
+                                </div>
+                                
+                                <!-- Message field with cosmic focus effects -->
+                                <div class="relative group">
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                    <textarea id="message" name="message" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cosmic-500 focus:border-cosmic-500 transition-all"></textarea>
+                                    
+                                    <!-- Subtle stars that appear on focus -->
+                                    <span class="absolute right-3 top-10 w-1 h-1 bg-cosmic-300 rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity duration-300"></span>
+                                    <span class="absolute right-6 top-14 w-0.5 h-0.5 bg-cosmic-500 rounded-full opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 delay-100"></span>
+                                </div>
+                                
+                                <!-- Submit button with cosmic effects -->
+                                <button type="submit" class="w-full bg-gradient-to-r from-cosmic-500 to-nebula-500 hover:from-cosmic-600 hover:to-nebula-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg relative overflow-hidden group">
+                                    <span class="relative z-10 flex items-center justify-center">
+                                        <i class="fas fa-paper-plane mr-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"></i>
+                                        Envoyer la Demande
+                                    </span>
+                                    
+                                    <!-- Subtle cosmic particles on hover -->
+                                    <div class="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                                        <span class="absolute top-1 left-1/4 w-1 h-1 bg-white rounded-full animate-twinkle"></span>
+                                        <span class="absolute bottom-2 right-1/4 w-1 h-1 bg-white rounded-full animate-twinkle" style="animation-delay: 0.5s"></span>
+                                        <span class="absolute top-2 right-1/3 w-0.5 h-0.5 bg-white rounded-full animate-twinkle" style="animation-delay: 1s"></span>
+                                    </div>
+                                    
+                                    <!-- Ripple effect on click -->
+                                    <span class="ripple-effect bg-white/30" id="submit-ripple"></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer with Enhanced Cosmic Styling -->
+    <footer class="bg-[#0A0F2C] text-white pt-16 pb-8 relative overflow-hidden">
+        <!-- Cosmic background elements -->
+        <div class="absolute inset-0 pointer-events-none">
+            <!-- Nebula effects -->
+            <div class="absolute top-0 left-1/4 w-80 h-80 bg-cosmic-500/10 rounded-full filter blur-[100px]"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-nebula-500/10 rounded-full filter blur-[120px]"></div>
+            
+            <!-- Subtle stars -->
+            <div class="stars-container opacity-30">
+                <div class="stars-small"></div>
+                <div class="stars-medium"></div>
+            </div>
+            
+            <!-- Constellation -->
+            <div class="absolute top-1/3 right-1/4 w-60 h-60 opacity-10">
+                <div class="constellation-orion w-full h-full"></div>
+            </div>
+        </div>
+    
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Branding section -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="relative">
+                            <i class="fas fa-star text-cosmic-400 text-2xl"></i>
+                            <span class="absolute -top-1 -right-1 w-6 h-6 bg-cosmic-500/20 rounded-full animate-pulse-slow"></span>
+                        </div>
+                        <span class="font-serif font-bold text-xl bg-gradient-to-r from-cosmic-400 to-nebula-300 bg-clip-text text-transparent">Orion Massage</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Embarquez pour un voyage sensoriel unique où chaque massage est une constellation de bien-être guidée par les mains expertes d'Oriane.</p>
+                    <div class="flex space-x-4">
+                        <!-- Social links with enhanced hover effects -->
+                        <a href="#" class="group w-10 h-10 bg-white/5 hover:bg-white/10 rounded-full flex items-center justify-center transition-colors duration-300 relative overflow-hidden">
+                            <i class="fab fa-facebook-f text-gray-300 group-hover:text-white transition-colors"></i>
+                            <!-- Subtle glow on hover -->
+                            <span class="absolute inset-0 bg-cosmic-400/20 opacity-0 group-hover:opacity-100 rounded-full blur-sm transition-opacity duration-300"></span>
+                        </a>
+                        <a href="#" class="group w-10 h-10 bg-white/5 hover:bg-white/10 rounded-full flex items-center justify-center transition-colors duration-300 relative overflow-hidden">
+                            <i class="fab fa-instagram text-gray-300 group-hover:text-white transition-colors"></i>
+                            <!-- Subtle glow on hover -->
+                            <span class="absolute inset-0 bg-cosmic-400/20 opacity-0 group-hover:opacity-100 rounded-full blur-sm transition-opacity duration-300"></span>
+                        </a>
+                        <a href="#" class="group w-10 h-10 bg-white/5 hover:bg-white/10 rounded-full flex items-center justify-center transition-colors duration-300 relative overflow-hidden">
+                            <i class="fab fa-twitter text-gray-300 group-hover:text-white transition-colors"></i>
+                            <!-- Subtle glow on hover -->
+                            <span class="absolute inset-0 bg-cosmic-400/20 opacity-0 group-hover:opacity-100 rounded-full blur-sm transition-opacity duration-300"></span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick links -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="font-serif text-lg font-bold mb-6 relative inline-block">
+                        Liens Rapides
+                        <!-- Animated underline -->
+                        <span class="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-cosmic-400 to-nebula-400"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#home" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                Accueil
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                À Propos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#testimonials" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                Témoignages
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="font-serif text-lg font-bold mb-6 relative inline-block">
+                        Nos Services
+                        <!-- Animated underline -->
+                        <span class="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-cosmic-400 to-nebula-400"></span>
+                    </h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                Massage Relaxant
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                Massage Profond
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                Massage Céleste
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                Massage aux Pierres Chaudes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#services" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                                <span class="w-1.5 h-1.5 bg-cosmic-400 rounded-full mr-2 transform scale-0 group-hover:scale-100 transition-transform duration-300"></span>
+                                Aromathérapie
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact info -->
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="font-serif text-lg font-bold mb-6 relative inline-block">
+                        Coordonnées
+                        <!-- Animated underline -->
+                        <span class="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-cosmic-400 to-nebula-400"></span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-cosmic-400"></i>
+                            <span class="text-gray-300">16 Rue de la Constellation<br>75012 Paris, France</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-cosmic-400"></i>
+                            <span class="text-gray-300">+33 1 23 45 67 89</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-cosmic-400"></i>
+                            <span class="text-gray-300">oriane@orion-massage.fr</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-clock mr-3 text-cosmic-400 mt-1"></i>
+                            <span class="text-gray-300">Lun-Ven: 9h - 20h<br>Sam: 10h - 18h<br>Dim: Fermé</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer bottom -->
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Orion Massage. Tous droits réservés.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Politique de Confidentialité</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Conditions d'Utilisation</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors duration-300">Plan du Site</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to top button with cosmic styling -->
+    <div id="back-to-top" class="fixed bottom-6 right-6 opacity-0 pointer-events-none transition-opacity duration-300">
+        <button class="w-12 h-12 bg-gradient-to-r from-cosmic-500 to-nebula-500 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-cosmic-500/50 transition-all duration-300 group relative overflow-hidden">
+            <i class="fas fa-chevron-up group-hover:animate-bounce transition-transform"></i>
+            
+            <!-- Subtle cosmic particles -->
+            <span class="absolute top-1 left-2 w-1 h-1 bg-white/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <span class="absolute bottom-2 right-3 w-0.5 h-0.5 bg-white/40 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></span>
+            
+            <!-- Orbit ring on hover -->
+            <span class="absolute inset-0 border border-white/20 rounded-full scale-0 group-hover:scale-125 opacity-0 group-hover:opacity-100 transition-all duration-500"></span>
+        </button>
+    </div>
+
+    <!-- JavaScript for interactivity -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+
+        // Generate dynamic star field with improved parallax
+function generateStarfield() {
+    const starfield = document.getElementById('starfield');
+    if (!starfield) return;
+    
+    // Clear existing stars
+    starfield.innerHTML = '';
+    
+    // Create three layers of stars for enhanced parallax
+    const layers = [
+        { count: 50, size: '1px', color: 'rgba(255,255,255,0.5)', speed: 0.2, class: 'star-layer-1' },
+        { count: 30, size: '2px', color: 'rgba(255,255,255,0.7)', speed: 0.3, class: 'star-layer-2' },
+        { count: 15, size: '3px', color: 'rgba(255,255,255,0.9)', speed: 0.5, class: 'star-layer-3' }
+    ];
+    
+    layers.forEach((layer, layerIndex) => {
+        const starLayer = document.createElement('div');
+        starLayer.className = `absolute inset-0 ${layer.class}`;
+        starLayer.style.transform = 'translateZ(0)'; // Hardware acceleration
+        starfield.appendChild(starLayer);
+        
+        for (let i = 0; i < layer.count; i++) {
+            const star = document.createElement('div');
+            star.className = 'absolute rounded-full';
+            star.style.width = layer.size;
+            star.style.height = layer.size;
+            star.style.backgroundColor = layer.color;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animation = `twinkle ${3 + Math.random() * 3}s ease-in-out infinite`;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            starLayer.appendChild(star);
+        }
+    });
+}
+
+// Enhanced parallax effect for star layers
+function enhancedParallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    
+    const scrollY = window.scrollY;
+    
+    // Apply different parallax speeds to each star layer
+    const starLayer1 = document.querySelector('.star-layer-1');
+    const starLayer2 = document.querySelector('.star-layer-2');
+    const starLayer3 = document.querySelector('.star-layer-3');
+    
+    if (starLayer1) starLayer1.style.transform = `translateY(${scrollY * 0.2}px)`;
+    if (starLayer2) starLayer2.style.transform = `translateY(${scrollY * 0.4}px)`;
+    if (starLayer3) starLayer3.style.transform = `translateY(${scrollY * 0.6}px)`;
+}
+
+// Update the handleParallax function to use our enhanced version
+function handleParallax() {
+    if (starsContainer && parallaxStars && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const scrollY = window.scrollY;
+        parallaxStars.style.transform = `translateY(${scrollY * 0.3}px)`;
+    }
+    
+    // Call our enhanced parallax effect
+    enhancedParallax();
+}
+
+        
+document.addEventListener('DOMContentLoaded', function() {
+    generateStarfield();
+
+    // Initialize AOS animations
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 50,
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    });
+    
+    // Initialize reveal elements
+    const revealElements = document.querySelectorAll('.reveal');
+    function checkReveal() {
+        revealElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            if (rect.top < windowHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    }
+    
+    // Throttle scroll events for better performance
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+            window.cancelAnimationFrame(scrollTimeout);
+        }
+        
+        scrollTimeout = window.requestAnimationFrame(function() {
+            checkReveal();
+            handleParallax();
+            handleStickyHeader();
+            handleBackToTop();
+        });
+    });
+    
+    // Check on initial load
+    checkReveal();
+    
+    // Mobile menu toggle with improved animation
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const line3 = document.getElementById('line3');
+    
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('hidden');
+                // Wait for a frame to ensure the browser recognizes the element
+                requestAnimationFrame(() => {
+                    mobileMenu.classList.add('active');
+                    
+                    // Animate hamburger to X
+                    line1.classList.add('rotate-45', 'translate-y-1.5');
+                    line2.classList.add('opacity-0');
+                    line3.classList.add('-rotate-45', '-translate-y-1.5');
+                });
+            } else {
+                mobileMenu.classList.remove('active');
+                
+                // Animate X back to hamburger
+                line1.classList.remove('rotate-45', 'translate-y-1.5');
+                line2.classList.remove('opacity-0');
+                line3.classList.remove('-rotate-45', '-translate-y-1.5');
+                
+                // Wait for the transition to complete before hiding
+                setTimeout(() => {
+                    if (!mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }, 500);
+            }
+        });
+    }
+    
+    // Optimized parallax effect for stars background
+    const starsContainer = document.getElementById('stars-container');
+    const parallaxStars = document.getElementById('parallax-stars');
+    
+    function handleParallax() {
+        if (starsContainer && parallaxStars && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const scrollY = window.scrollY;
+            parallaxStars.style.transform = `translateY(${scrollY * 0.3}px)`;
+        }
+    }
+    
+    // Improved sticky header handling
+    const nav = document.querySelector('nav');
+    
+    function handleStickyHeader() {
+        if (nav) {
+            if (window.scrollY > 100) {
+                nav.classList.remove('py-3');
+                nav.classList.add('py-2', 'shadow-md');
+            } else {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-2', 'shadow-md');
+            }
+        }
+    }
+    
+    // Back to top button with improved visibility handling
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    function handleBackToTop() {
+        if (backToTopButton) {
+            if (window.scrollY > 500) {
+                backToTopButton.classList.add('opacity-100', 'pointer-events-auto');
+                backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'pointer-events-auto');
+                backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+    }
+    
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+            });
+        });
+    }
+    
+    // Enhanced ripple effect with proper cleanup
+    const buttons = document.querySelectorAll('button, a.group');
+    
+    if (buttons) {
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const rippleElement = this.querySelector('.ripple-effect');
+                
+                if (rippleElement) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    rippleElement.style.left = `${x - 50}px`; // Center the 100px ripple
+                    rippleElement.style.top = `${y - 50}px`;
+                    
+                    // Reset animation with proper cleanup
+                    rippleElement.style.animation = 'none';
+                    rippleElement.offsetHeight; // Force reflow
+                    rippleElement.style.animation = 'ripple 1.5s linear';
+                }
+            });
+        });
+    }
+    
+    // Form submission handling
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real application, you would send the form data to your backend
+            alert('Merci pour votre message ! Nous vous contacterons très bientôt.');
+            contactForm.reset();
+        });
+    }
+    
+    // Improved tilt effect with performance optimizations
+    const tiltElements = document.querySelectorAll('.tilt-on-hover');
+    
+    if (tiltElements && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        tiltElements.forEach(element => {
+            let rafId = null;
+            
+            element.addEventListener('mousemove', function(e) {
+                if (rafId) {
+                    cancelAnimationFrame(rafId);
+                }
+                
+                rafId = requestAnimationFrame(() => {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const xPercent = (x / rect.width - 0.5) * 10; // Reduced intensity for smoother effect
+                    const yPercent = (y / rect.height - 0.5) * 10;
+                    
+                    this.style.transform = `perspective(1000px) rotateX(${-yPercent}deg) rotateY(${xPercent}deg)`;
+                });
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                if (rafId) {
+                    cancelAnimationFrame(rafId);
+                }
+                this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+    }
+});
+    </script>
